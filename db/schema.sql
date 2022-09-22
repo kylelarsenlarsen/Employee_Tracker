@@ -14,5 +14,12 @@ CREATE TABLE role (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, -- we're declaring the variable 'id', it must be an integer, the NOT NULL statement dictates it cannot be null, PRIMARY KEY identifies each record in a table. AUTO_INCREMENT assigns a unique primary key to every inserted record.
     title VARCHAR(30) NOT NULL, -- declaring the variable title, setting a max of 30 varying characters and telling SQL to only allow object values. if not it won't function.
     salary DECIMAL(10, 2) NOT NULL, -- we're declare a salary variable, allowing a decimal number to pass to the table with a whole number value of 10 figures and a decimal place of 2.
+    department_id INT, -- created a department_id variable, allowing only an integer.
+    FOREIGN KEY (department_id) 
+    REFERENCES deparment(id)
+    ON DELETE SET NULL
+);
+
+CREATE TABLE employee (
     
 )
