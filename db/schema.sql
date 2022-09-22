@@ -21,5 +21,12 @@ CREATE TABLE role (
 );
 
 CREATE TABLE employee (
-
+    id NOT NULL INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(30) NOT NULL,
+    last_name VARCHAR(30) NOT NULL,
+    role_id INT, -- delcared our foreign key name and that it should be an integer.
+    manager_id INT,
+    FOREIGN KEY (role_id) --using this variable to link this table with the role table.
+    REFERENCES role(id) -- we're chaining together the role table and it's id within parentheses.
+    ON DELETE SET NULL -- removes object value when this table is deleted. displaying nothing through the command line.
 );
