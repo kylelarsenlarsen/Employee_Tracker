@@ -15,11 +15,11 @@ CREATE TABLE role (
     title VARCHAR(30) NOT NULL, -- declaring the variable title, setting a max of 30 varying characters and telling SQL to only allow object values. if not it won't function.
     salary DECIMAL(10, 2) NOT NULL, -- we're declare a salary variable, allowing a decimal number to pass to the table with a whole number value of 10 figures and a decimal place of 2.
     department_id INT, -- created a department_id variable, allowing only an integer.
-    FOREIGN KEY (department_id) 
-    REFERENCES deparment(id)
-    ON DELETE SET NULL
+    FOREIGN KEY (department_id) -- this foreign key is used to link the department table together with the role table with this declared variable deparment_id.
+    REFERENCES deparment(id) -- this statement references the deparment table.
+    ON DELETE SET NULL -- removes object value when this table is deleted. displaying nothing through inquirer.
 );
 
 CREATE TABLE employee (
-    
-)
+
+);
